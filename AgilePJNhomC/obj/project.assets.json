@@ -3913,11 +3913,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\FPT phan mem\\T2207E\\Cloud\\Exam\\AgilePJNhomC\\AgilePJNhomC.csproj",
+      "projectUniqueName": "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJNhomC\\AgilePJNhomC.csproj",
       "projectName": "AgilePJNhomC",
-      "projectPath": "D:\\FPT phan mem\\T2207E\\Cloud\\Exam\\AgilePJNhomC\\AgilePJNhomC.csproj",
+      "projectPath": "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJNhomC\\AgilePJNhomC.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\FPT phan mem\\T2207E\\Cloud\\Exam\\AgilePJNhomC\\obj\\",
+      "outputPath": "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJNhomC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
