@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJNhomC\\AgilePJNhomC.csproj": {}
+    "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\AgilePJNhomC.csproj": {}
   },
   "projects": {
-    "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJNhomC\\AgilePJNhomC.csproj": {
+    "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\AgilePJNhomC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJNhomC\\AgilePJNhomC.csproj",
+        "projectUniqueName": "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\AgilePJNhomC.csproj",
         "projectName": "AgilePJNhomC",
-        "projectPath": "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJNhomC\\AgilePJNhomC.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJNhomC\\obj\\",
+        "projectPath": "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\AgilePJNhomC.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -120,7 +119,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

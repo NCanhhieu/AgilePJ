@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AgilePJAPINhomC",
+    "\\AgilePJNhomC",
+    "\\AgilePJNhomC\\Controllers",
+    "\\AgilePJNhomC\\Views",
+    "\\AgilePJNhomC\\Views\\Home"
   ],
+  "SelectedNode": "\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj",
   "PreviewInSolutionExplorer": false
 }

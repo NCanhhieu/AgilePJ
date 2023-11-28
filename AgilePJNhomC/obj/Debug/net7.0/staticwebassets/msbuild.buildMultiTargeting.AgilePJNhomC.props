@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AgilePJNhomC.props" />
+</Project>
