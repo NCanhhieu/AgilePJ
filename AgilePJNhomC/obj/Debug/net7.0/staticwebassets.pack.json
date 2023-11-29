@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\wwwroot\\img\\Cat1.jpg",
+      "PackagePath": "staticwebassets\\img\\Cat1.jpg"
+    },
+    {
       "Id": "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\wwwroot\\img\\about.png",
       "PackagePath": "staticwebassets\\img\\about.png"
     },
@@ -67,6 +71,14 @@
     {
       "Id": "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\wwwroot\\img\\carousel-2.jpg",
       "PackagePath": "staticwebassets\\img\\carousel-2.jpg"
+    },
+    {
+      "Id": "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\wwwroot\\img\\cat2.png",
+      "PackagePath": "staticwebassets\\img\\cat2.png"
+    },
+    {
+      "Id": "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\wwwroot\\img\\cat3.png",
+      "PackagePath": "staticwebassets\\img\\cat3.png"
     },
     {
       "Id": "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\wwwroot\\img\\gallery-1.jpg",
