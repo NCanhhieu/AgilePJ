@@ -1,65 +1,67 @@
 CREATE TABLE Userweb (
-  userid INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-  username NVARCHAR(100) NOT NULL,
-  userpass NVARCHAR(100) NOT NULL,
-  usermail NVARCHAR(100) NOT NULL,
-  userimg NVARCHAR(200) NOT NULL,
-  role VARCHAR(100) NOT NULL,
-  status INT NOT NULL
+  UserId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+  UserName NVARCHAR(100) NOT NULL,
+  UserPass NVARCHAR(100) NOT NULL,
+  UserMail NVARCHAR(100) NOT NULL,
+  UserImg NVARCHAR(200) NOT NULL,
+  UserRole VARCHAR(100) NOT NULL,
+  UserStatus INT NOT NULL
 );
 
 CREATE TABLE admin (
-  adminid INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-  adminname NVARCHAR(100) NOT NULL,
-  admintel NVARCHAR(100) UNIQUE NOT NULL,
-  userid INT NOT NULL,
-  FOREIGN KEY (userid) REFERENCES Userweb(userid)
+  AdminId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+  AdminName NVARCHAR(100) NOT NULL,
+  AdminTel NVARCHAR(100) UNIQUE NOT NULL,
+  UserId INT NOT NULL,
+  FOREIGN KEY (UserId) REFERENCES Userweb(UserId)
 );
 
-CREATE TABLE Category (
-  categoryid INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-  categoryname NVARCHAR(100) NOT NULL,
-  status INT NOT NULL
-);
+
 
 CREATE TABLE customer (
-  customid INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-  customname NVARCHAR(100) NOT NULL,
-  customtel NVARCHAR(100) NOT NULL,
-  custaddress NVARCHAR(100) NOT NULL,
-  custbirthday DATETIME NOT NULL,
-  userid INT NOT NULL,
-  FOREIGN KEY (userid) REFERENCES Userweb(userid)
+  CustomId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+  CustomName NVARCHAR(100) NOT NULL,
+  CustomTel NVARCHAR(100) NOT NULL,
+  CustAddress NVARCHAR(100) NOT NULL,
+  CustBirthday DATETIME NOT NULL,
+  UserId INT NOT NULL,
+  FOREIGN KEY (UserId) REFERENCES Userweb(UserId)
 );
 
 CREATE TABLE Channel (
-  Channelid INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+  ChannelId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
   ChannelName NVARCHAR(100) NOT NULL,
-  status INT NOT NULL,
-  userid INT NOT NULL,
-  FOREIGN KEY (userid) REFERENCES customer(customid)
+  Channelstatus INT NOT NULL,
+  CustomId INT NOT NULL,
+  FOREIGN KEY (CustomId) REFERENCES customer(CustomId)
 );
 
 
+CREATE TABLE Category (
+  CategoryId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+  CategoryName NVARCHAR(100) NOT NULL,
+  CateStatus INT NOT NULL
+);
+
 CREATE TABLE Clip (
-  clipid INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-  clipname NVARCHAR(100) NOT NULL,
-  clipdecs TEXT NOT NULL,
-  thumbail NVARCHAR(100) NOT NULL,
-  dateupload DATETIME NOT NULL,
+  ClipId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+  ClipName NVARCHAR(100) NOT NULL,
+  ClipDecs TEXT NOT NULL,
+  Thumbail NVARCHAR(100) NOT NULL,
+  DateUpload DATETIME NOT NULL,
   Filesize INT NOT NULL,
   Filepath VARCHAR(100) NOT NULL,
-  status INT NOT NULL,
-  Channelid INT,
-  FOREIGN KEY (Channelid) REFERENCES Channel(Channelid)
+  ClipStatus INT NOT NULL,
+  ChannelId INT DEFAULT(0) NOT NULL,
+  FOREIGN KEY (ChannelId) REFERENCES Channel(ChannelId)
 );
 
 
 
 CREATE TABLE categoryclip (
-  caclipid INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-  categoryid INT NOT NULL,
-  clipid INT NOT NULL,
-  FOREIGN KEY (categoryid) REFERENCES Category(categoryid),
-  FOREIGN KEY (clipid) REFERENCES Clip(clipid)
+  CaclipId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+  CategoryId INT NOT NULL,
+  ClipId INT NOT NULL,
+  FOREIGN KEY (CategoryId) REFERENCES Category(CategoryId),
+  FOREIGN KEY (ClipId) REFERENCES Clip(ClipId)
 );
