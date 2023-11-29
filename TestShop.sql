@@ -50,7 +50,7 @@ CREATE TABLE Clip (
   Filesize INT NOT NULL,
   Filepath VARCHAR(100) NOT NULL,
   status INT NOT NULL,
-  Channelid INT NOT NULL,
+  Channelid INT,
   FOREIGN KEY (Channelid) REFERENCES Channel(Channelid)
 );
 
