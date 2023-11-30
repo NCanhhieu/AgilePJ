@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj": {}
+    "D:\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj": {}
   },
   "projects": {
-    "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj": {
+    "D:\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj",
+        "projectUniqueName": "D:\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj",
         "projectName": "AgilePJAPINhomC",
-        "projectPath": "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJAPINhomC\\obj\\",
+        "projectPath": "D:\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj",
+        "packagesPath": "C:\\Users\\huyen\\.nuget\\packages\\",
+        "outputPath": "D:\\AgilePJ\\AgilePJAPINhomC\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\huyen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,6 +56,10 @@
               "target": "Package",
               "version": "[5.3.0, )"
             },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.4, )"
@@ -100,6 +100,10 @@
               "target": "Package",
               "version": "[7.0.11, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -124,7 +128,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

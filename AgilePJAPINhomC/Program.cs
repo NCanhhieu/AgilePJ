@@ -1,4 +1,19 @@
+using AgilePJAPINhomC.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+IConfiguration configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options => {
+    options.AddPolicy(name: MyAllowSpecificOrigins, policy => {
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
 
 // Add services to the container.
 
