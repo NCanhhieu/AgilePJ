@@ -81,29 +81,38 @@
             // Thêm mỗi video vào danh sách
             videos.forEach(function (video) {
                 var videoItem = `
-                                <div class="col-lg-4 col-md-6 mb-2">
-                                    <div class="rent-item mb-4">
-                                        <img class="img-fluid mb-4" src="${video.thumbnailUrl}" alt="${video.title}">
-                                        <h4 class="text-uppercase mb-4">${video.title}</h4>
-                                        <div class="d-flex justify-content-center mb-4">
-                                            <div class="px-2">
-                                                <i class="fa fa-car text-primary mr-1"></i>
-                                                <span>${video.author}</span>
-                                            </div>
-                                            <div class="px-2 border-left border-right">
-                                                <i class="fa fa-cogs text-primary mr-1"></i>
-                                                <span>${video.duration}</span>
-                                            </div>
-                                            <div class="px-2">
-                                                <i class="fa fa-road text-primary mr-1"></i>
-                                                <span>${video.uploadTime}</span>
-                                            </div>
+                            <div class="col-lg-4 col-md-6 mb-2 video-item" data-video-id="${video.id}">
+                                <!-- Thêm thuộc tính data-video-id để lưu ID của video -->
+                                <div class="rent-item mb-4">
+                                    <img class="img-fluid mb-4" src="${video.thumbnailUrl}" alt="${video.title}">
+                                    <h4 class="text-uppercase mb-4">${video.title}</h4>
+                                    <div class="d-flex justify-content-center mb-4">
+                                        <div class="px-2">
+                                            <i class="fa fa-car text-primary mr-1"></i>
+                                            <span>${video.author}</span>
                                         </div>
-                                        <a class="btn btn-primary px-3" href="${video.videoUrl}">Watch</a>
+                                        <div class="px-2 border-left border-right">
+                                            <i class="fa fa-cogs text-primary mr-1"></i>
+                                            <span>${video.duration}</span>
+                                        </div>
+                                        <div class="px-2">
+                                            <i class="fa fa-road text-primary mr-1"></i>
+                                            <span>${video.uploadTime}</span>
+                                        </div>
                                     </div>
-                                </div>`;
+                                    <a class="btn btn-primary px-3" href="${video.videoUrl}">Watch</a>
+                                </div>
+                            </div>`;
 
                 videoListContainer.append(videoItem);
+            });
+            // Thêm sự kiện click cho mỗi div chứa video
+            $('.video-item').on('click', function () {
+                // Lấy ID của video từ thuộc tính data-video-id
+                var videoId = $(this).data('video-id');
+
+                // Chuyển hướng đến trang chi tiết video với ID tương ứng
+                window.location.href = '/Video/Detail?id=' + videoId;
             });
         }
     </script>
