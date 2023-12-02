@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RfKx7nO+pCYog0jeHyBmgVC4scjjp/5W4bYA02tYs1ytXPsD6W/PH/TEj0WcCEZodgZkbemGM0KEnaHdglRtVA==",
+  "dgSpecHash": "ugGXAYYriLNUgxP1coxJD9pdcfbqGp6wDNq6/U6Yiv42hdJNbcliEQW5wghD6GtdEG7IHyjtiD7vGWD59F26nw==",
   "success": true,
-  "projectFilePath": "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj",
+  "projectFilePath": "D:\\FPT phan mem\\T2207E\\Agile\\nhanhbase2\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

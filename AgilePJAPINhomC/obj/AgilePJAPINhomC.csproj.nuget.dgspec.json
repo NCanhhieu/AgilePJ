@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj": {}
+    "D:\\FPT phan mem\\T2207E\\Agile\\nhanhbase2\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj": {}
   },
   "projects": {
-    "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj": {
+    "D:\\FPT phan mem\\T2207E\\Agile\\nhanhbase2\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj",
+        "projectUniqueName": "D:\\FPT phan mem\\T2207E\\Agile\\nhanhbase2\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj",
         "projectName": "AgilePJAPINhomC",
-        "projectPath": "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj",
+        "projectPath": "D:\\FPT phan mem\\T2207E\\Agile\\nhanhbase2\\AgilePJ\\AgilePJAPINhomC\\AgilePJAPINhomC.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\FPT phan mem\\T2207E\\Agile\\AgilePJ\\AgilePJAPINhomC\\obj\\",
+        "outputPath": "D:\\FPT phan mem\\T2207E\\Agile\\nhanhbase2\\AgilePJ\\AgilePJAPINhomC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -132,7 +133,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

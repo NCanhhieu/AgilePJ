@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "Category Page";
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Category Page</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free HTML Templates" name="keywords">
+        <meta content="Free HTML Templates" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+    <div id="videoListContainer" class="row">
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        var categoryId = new URLSearchParams(window.location.search).get('categoryId');
+        // Hàm này sẽ được gọi khi trang tải xong
+        $(document).ready(function () {
+            // Gọi API của thành viên 2 để lấy danh sách video
+            $.ajax({
+                url: '/lib/MockData/video.json', // Đường dẫn đến API của thành viên 2 để lấy danh sách video
+                type: 'GET',
+                dataType: 'json',
+                success: function (videos) {
+                    // Lọc danh sách video theo categoryId nếu categoryId tồn tại
+                    if (categoryId) {
+                        videos = videos.filter(video => video.categoryId == categoryId);
+                    }
+                    // Xử lý dữ liệu trả về từ API và hiển thị danh sách video
+                    displayVideoList(videos);
+                },
+                error: function (error) {
+                    console.error(error);
+                }
+            });
+        });
+
+        // Hàm này điền thông tin của video vào danh sách video container
+        function displayVideoList(videos) {
+            var videoListContainer = $('#videoListContainer');
+
+            // Xóa tất cả các mục hiện tại trong danh sách video container
+            videoListContainer.empty();
+
+            // Thêm mỗi video vào danh sách
+            videos.forEach(function (video) {
+                var videoItem = `
+                            <div class="col-lg-4 col-md-6 mb-2 video-item" data-video-id="${video.id}">
+                                <!-- Thêm thuộc tính data-video-id để lưu ID của video -->
+                                <div class="rent-item mb-4">
+                                    <img class="img-fluid mb-4" src="${video.thumbnailUrl}" alt="${video.title}">
+                                    <h4 class="text-uppercase mb-4">${video.title}</h4>
+                                    <div class="d-flex justify-content-center mb-4">
+                                        <div class="px-2">
+                                            <i class="fa fa-car text-primary mr-1"></i>
+                                            <span>${video.author}</span>
+                                        </div>
+                                        <div class="px-2 border-left border-right">
+                                            <i class="fa fa-cogs text-primary mr-1"></i>
+                                            <span>${video.duration}</span>
+                                        </div>
+                                        <div class="px-2">
+                                            <i class="fa fa-road text-primary mr-1"></i>
+                                            <span>${video.uploadTime}</span>
+                                        </div>
+                                    </div>
+                                    <a class="btn btn-primary px-3" href="${video.videoUrl}">Watch</a>
+                                </div>
+                            </div>`;
+
+                videoListContainer.append(videoItem);
+            });
+            // Thêm sự kiện click cho mỗi div chứa video
+            $('.video-item').on('click', function () {
+                // Lấy ID của video từ thuộc tính data-video-id
+                var videoId = $(this).data('video-id');
+
+                // Chuyển hướng đến trang chi tiết video với ID tương ứng
+                window.location.href = '/Video/Detail?id=' + videoId;
+            });
+        }
+    </script>
+    </body>
+
+</html>
