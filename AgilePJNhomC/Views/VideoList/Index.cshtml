@@ -110,7 +110,7 @@
             // Thêm mỗi video vào danh sách
             videos.forEach(function (video) {
                 var videoItem = `
-                        <div class="col-lg-4 col-md-6 mb-2">
+                        <div class="col-lg-4 col-md-6 mb-2 video-item" data-video-id="${video.id}">
                             <div class="rent-item mb-4">
                                 <img class="img-fluid mb-4" src="${video.thumbnailUrl}" alt="${video.title}">
                                 <h4 class="text-uppercase mb-4">${video.title}</h4>
@@ -128,11 +128,17 @@
                                         <span>${video.uploadTime}</span>
                                     </div>
                                 </div>
-                                <a class="btn btn-primary px-3" href="${video.videoUrl}">Watch</a>
+                                <a class="btn btn-primary px-3 watch-video-btn" href="${video.videoUrl}">Watch</a>
                             </div>
                         </div>`;
 
                 videoListContainer.append(videoItem);
+            });
+
+            // Thêm sự kiện click cho các div chứa video
+            $('.video-item').click(function () {
+                var videoId = $(this).data('video-id');
+                window.location.href = `/Video/id=${videoId}`;
             });
         }
     </script>
