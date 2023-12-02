@@ -56,11 +56,9 @@
                         <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         <a class="nav-link" asp-area="" asp-controller="VideoList" asp-action="Index">VideoList</a>
                         <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown">Category</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <a class="dropdown-item" asp-area="" asp-controller="Category" asp-action="Category1">Category 1</a>
-                                <a class="dropdown-item" asp-area="" asp-controller="Category" asp-action="Category2">Category 2</a>
-                                <a class="dropdown-item" asp-area="" asp-controller="Category" asp-action="Category3">Category 3</a>
+                            <a class="nav-link dropdown-toggle" id="categoryDropdown" data-toggle="dropdown">Category</a>
+                            <div class="dropdown-menu rounded-0 m-0" id="categoryDropdownMenu" style="max-height: 200px; overflow-y: auto; max-width: 300px;">
+                                <!-- Categories will be dynamically added here -->
                             </div>
                         </div>
 
@@ -87,6 +85,55 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        var categoryPageUrl = '/Category';
+        // link api lấy danh sách category
+        var apiUrl = 'https://jsonplaceholder.typicode.com/albums';
+
+        function fetchCategories() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(categories => {
+                    // Get the dropdown menu element
+                    var dropdownMenu = document.getElementById('categoryDropdownMenu');
+
+                    // Clear existing items in the dropdown
+                    dropdownMenu.innerHTML = '';
+
+                    // Add each category as a dropdown item
+                    categories.forEach(category => {
+                        var categoryLink = document.createElement('a');
+                        categoryLink.classList.add('dropdown-item');
+                        categoryLink.href = `${categoryPageUrl}?categoryId=${category.id}`;  // Add your category link here
+                        categoryLink.textContent = category.title; // Assuming 'name' is the property holding category name
+
+                        // Add an event listener if you want to handle category selection
+                        categoryLink.addEventListener('click', function () {
+                            // Handle category selection here
+                            console.log('Selected category:', category.title);
+                        });
+
+                        // Add hover effect
+                        categoryLink.addEventListener('mouseenter', function () {
+                            categoryLink.style.backgroundColor = '#2b2e4a'; // Add your hover background color
+                            categoryLink.style.color = '#f77d0a';
+                        });
+
+                        categoryLink.addEventListener('mouseleave', function () {
+                            categoryLink.style.backgroundColor = ''; // Reset background color on mouse leave
+                            categoryLink.style.color = '#0a0000';
+                        });
+
+                        // Append the category link to the dropdown menu
+                        dropdownMenu.appendChild(categoryLink);
+                    });
+                })
+                .catch(error => console.error('Error fetching categories:', error));
+        }
+
+        // Call the function to fetch and populate categories when the page loads
+        document.addEventListener('DOMContentLoaded', fetchCategories);
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

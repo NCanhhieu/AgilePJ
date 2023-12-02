@@ -17,17 +17,6 @@ namespace AgilePJNhomC.Controllers
         {
             return View();
         }
-        public IActionResult Category1()
-        {
-            return View();
-        }
-        public IActionResult Category2()
-        {
-            return View();
-        }
-        public IActionResult Category3()
-        {
-            return View();
-        }
+       
     }
 }

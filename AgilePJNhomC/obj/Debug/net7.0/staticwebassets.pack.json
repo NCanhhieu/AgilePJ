@@ -177,6 +177,10 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\wwwroot\\lib\\MockData\\video.json",
+      "PackagePath": "staticwebassets\\lib\\MockData\\video.json"
+    },
+    {
       "Id": "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },

@@ -1,4 +1,4 @@
-@{
+﻿@{
     ViewData["Title"] = "Category Page";
 }
 <!DOCTYPE html>
@@ -35,6 +35,8 @@
         <h1>
            Something here
         </h1>
+    <div id="videoListContainer" class="row">
+    </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -48,6 +50,66 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        var categoryId = new URLSearchParams(window.location.search).get('categoryId');
+        // Hàm này sẽ được gọi khi trang tải xong
+        $(document).ready(function () {
+            // Gọi API của thành viên 2 để lấy danh sách video
+            $.ajax({
+                url: '/lib/MockData/video.json', // Đường dẫn đến API của thành viên 2 để lấy danh sách video
+                type: 'GET',
+                dataType: 'json',
+                success: function (videos) {
+                    // Lọc danh sách video theo categoryId nếu categoryId tồn tại
+                    if (categoryId) {
+                        videos = videos.filter(video => video.categoryId == categoryId);
+                    }
+                    // Xử lý dữ liệu trả về từ API và hiển thị danh sách video
+                    displayVideoList(videos);
+                },
+                error: function (error) {
+                    console.error(error);
+                }
+            });
+        });
+
+        // Hàm này điền thông tin của video vào danh sách video container
+        function displayVideoList(videos) {
+            var videoListContainer = $('#videoListContainer');
+
+            // Xóa tất cả các mục hiện tại trong danh sách video container
+            videoListContainer.empty();
+
+            // Thêm mỗi video vào danh sách
+            videos.forEach(function (video) {
+                var videoItem = `
+                                <div class="col-lg-4 col-md-6 mb-2">
+                                    <div class="rent-item mb-4">
+                                        <img class="img-fluid mb-4" src="${video.thumbnailUrl}" alt="${video.title}">
+                                        <h4 class="text-uppercase mb-4">${video.title}</h4>
+                                        <div class="d-flex justify-content-center mb-4">
+                                            <div class="px-2">
+                                                <i class="fa fa-car text-primary mr-1"></i>
+                                                <span>${video.author}</span>
+                                            </div>
+                                            <div class="px-2 border-left border-right">
+                                                <i class="fa fa-cogs text-primary mr-1"></i>
+                                                <span>${video.duration}</span>
+                                            </div>
+                                            <div class="px-2">
+                                                <i class="fa fa-road text-primary mr-1"></i>
+                                                <span>${video.uploadTime}</span>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-primary px-3" href="${video.videoUrl}">Watch</a>
+                                    </div>
+                                </div>`;
+
+                videoListContainer.append(videoItem);
+            });
+        }
+    </script>
     </body>
 
 </html>

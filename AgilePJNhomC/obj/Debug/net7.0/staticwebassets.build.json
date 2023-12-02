@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "O6D7/ZrPZK4q32QdJjUtunoX/Ft+1bH8D/OKDhL+Gyk=",
+  "Hash": "GrJVZcxc8LHs6Jd6JyJab/LS7zbMicz9oR6PLWOa3c0=",
   "Source": "AgilePJNhomC",
   "BasePath": "_content/AgilePJNhomC",
   "Mode": "Default",
@@ -2803,6 +2803,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\wwwroot\\lib\\MockData\\video.json",
+      "SourceId": "AgilePJNhomC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\wwwroot\\",
+      "BasePath": "_content/AgilePJNhomC",
+      "RelativePath": "lib/MockData/video.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\MockData\\video.json"
     },
     {
       "Identity": "D:\\FPTaptech\\Sem3\\subject6-AD\\CodeClone\\AgilePJ\\AgilePJNhomC\\wwwroot\\lib\\owlcarousel\\assets\\ajax-loader.gif",
