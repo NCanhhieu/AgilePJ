@@ -70,3 +70,17 @@ INSERT INTO Userweb (username , userpass  , usermail , userimg  , role , status
 ) VALUES ('Admin1','123456','admin@gmail.com','noimage.png','admin',1),('Customer1','123456','Customer@gmail.com','noimage.png','Customer',1);
 INSERT INTO Category (CategoryName,CateStatus) 
 VALUES ('Kinh dị', 1),('Trinh thám', 1), ('Hài',1),('16+',1),('Âm nhạc',1),('Viễn tưởng',1),('thần thoại',1),('lịch sử',1);
+INSERT INTO customer (
+  
+  customname ,
+  customtel,
+  custaddress ,
+  custbirthday,
+  userid 
+) VALUES ('anh A','+09022010','Hà nội','1999/02/01',1);
+
+INSERT INTO Channel ( 
+  ChannelName  ,
+  Channelstatus  ,
+  CustomId 
+) VALUES ('Zero',1,1);

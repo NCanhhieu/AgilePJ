@@ -832,3 +832,4 @@ D:\FPT phan mem\T2207E\Agile\nhanhbase2\AgilePJ\AgilePJAPINhomC\obj\Debug\net7.0
 D:\FPT phan mem\T2207E\Agile\nhanhbase2\AgilePJ\AgilePJAPINhomC\obj\Debug\net7.0\AgilePJAPINhomC.pdb
 D:\FPT phan mem\T2207E\Agile\nhanhbase2\AgilePJ\AgilePJAPINhomC\obj\Debug\net7.0\AgilePJAPINhomC.genruntimeconfig.cache
 D:\FPT phan mem\T2207E\Agile\nhanhbase2\AgilePJ\AgilePJAPINhomC\obj\Debug\net7.0\ref\AgilePJAPINhomC.dll
+D:\FPT phan mem\T2207E\Agile\nhanhbase2\AgilePJ\AgilePJAPINhomC\bin\Debug\net7.0\NReco.VideoConverter.dll

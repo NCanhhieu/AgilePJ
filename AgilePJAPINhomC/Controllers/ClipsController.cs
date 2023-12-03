@@ -15,10 +15,12 @@ namespace AgilePJAPINhomC.Controllers
     public class ClipsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly Microsoft.AspNetCore.Hosting.IHostingEnvironment _env;
 
-        public ClipsController(ApplicationDbContext context)
+        public ClipsController(ApplicationDbContext context, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
         {
             _context = context;
+            _env = env;
         }
 
         // GET: api/Clips
@@ -90,12 +92,49 @@ namespace AgilePJAPINhomC.Controllers
           {
               return Problem("Entity set 'ApplicationDbContext.Clip'  is null.");
           }
+          
             _context.Clip.Add(clip);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetClip", new { id = clip.ClipId }, clip);
         }
+        /*
+        [HttpPost]
+        public async Task<ActionResult<Clip>> UploadClip(IList<IFormFile> files)
+        {
+            Clip fileDetail = new Clip();
+            foreach (var file in files)
+            {
+                var fileType = Path.GetExtension(file.FileName);
+                //var ext = file.;
+                if (fileType.ToLower() == ".mp4" || fileType.ToLower() == ".mkv" || fileType.ToLower() == ".avi" 
+                    || fileType.ToLower() == ".webm" || fileType.ToLower() == ".mov")
+                {
+                    var filePath = _env.ContentRootPath;
+                    var docName = Path.GetFileName(file.FileName);
+                    if (file != null && file.Length > 0)
+                    {
+                         
+                        fileDetail.ClipName = docName;
+                        fileDetail.ClipDesc = fileType;
+                        fileDetail.Filepath = Path.Combine(filePath, "Files", fileDetail.ClipName.ToString() + fileDetail.ClipDesc);
+                        using (var stream = new FileStream(fileDetail.Filepath, FileMode.Create))
+                        {
+                            file.CopyToAsync(stream);
+                        }
 
+                        _context.Add(fileDetail);
+                        _context.SaveChangesAsync();
+                    }
+                    else
+                    {
+                        return BadRequest();
+                    }
+                }
+            }
+            return Ok();
+        }
+        */
         // DELETE: api/Clips/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteClip(int id)
@@ -122,3 +161,4 @@ namespace AgilePJAPINhomC.Controllers
         }
     }
 }
+

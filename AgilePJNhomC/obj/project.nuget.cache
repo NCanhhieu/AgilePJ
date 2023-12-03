@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rph1u3Qvd+Va4SuiU/bcSJ1OYqf0tvWbWYIcvgK+cNzdICJR6qXR+TVUuywZKNsMVlI8X6HNDF7Nceq+5fhwMw==",
+  "dgSpecHash": "OKKt0gagj8nHcrH9e0OTW4yQvD4oAehzJQnkmrcikh25HzzkYV9cINhdLSH3WWOqOzj5nmcMLgykilfYnlOMJQ==",
   "success": true,
   "projectFilePath": "D:\\FPT phan mem\\T2207E\\Agile\\nhanhbase2\\AgilePJ\\AgilePJNhomC\\AgilePJNhomC.csproj",
   "expectedPackageFiles": [
@@ -134,6 +134,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\nreco.videoconverter\\1.2.1\\nreco.videoconverter.1.2.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\nuget.common\\6.6.1\\nuget.common.6.6.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\nuget.configuration\\6.6.1\\nuget.configuration.6.6.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\nuget.dependencyresolver.core\\6.6.1\\nuget.dependencyresolver.core.6.6.1.nupkg.sha512",
