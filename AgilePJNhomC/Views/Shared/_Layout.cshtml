@@ -87,7 +87,7 @@
     <script>
         var categoryPageUrl = '/Category';
         // link api lấy danh sách category
-        var apiUrl = 'https://jsonplaceholder.typicode.com/albums';
+        var apiUrl = 'http://localhost:5069/api/Categories';
 
         function fetchCategories() {
             fetch(apiUrl)
@@ -103,8 +103,8 @@
                     categories.forEach(category => {
                         var categoryLink = document.createElement('a');
                         categoryLink.classList.add('dropdown-item');
-                        categoryLink.href = `${categoryPageUrl}?categoryId=${category.id}`;  // Add your category link here
-                        categoryLink.textContent = category.title; // Assuming 'name' is the property holding category name
+                        categoryLink.href = `${categoryPageUrl}?categoryId=${category.categoryId}`;  // Add your category link here
+                        categoryLink.textContent = category.CategoryName; // Assuming 'name' is the property holding category name
 
                         // Add an event listener if you want to handle category selection
                         categoryLink.addEventListener('click', function () {

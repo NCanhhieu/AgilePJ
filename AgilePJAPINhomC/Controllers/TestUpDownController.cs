@@ -25,7 +25,7 @@ namespace AgilePJAPINhomC.Controllers
             try
             {
                 //var fileType = Path.GetExtension(file.FileName);
-                
+
                 if (fileType.ToLower() == ".mp4" || fileType.ToLower() == ".mkv" || fileType.ToLower() == ".avi"
                     || fileType.ToLower() == ".webm" || fileType.ToLower() == ".mov")
                 {
@@ -37,24 +37,23 @@ namespace AgilePJAPINhomC.Controllers
                     Clip clip = new Clip();
                     clip.DateUpload = DateTime.Now;
                     clip.ClipName = file.FileName;
-                    clip.ClipStatus = 1; 
+                    clip.ClipStatus = 1;
                     clip.Filepath = Path.Combine(Directory.GetCurrentDirectory(), "Data\\Files");
                     clip.ClipDesc = file.ContentType.ToString();
-                    var ffMpeg = new NReco.VideoConverter.FFMpegConverter();
-                    var fileExtension = Path.GetExtension(clip.Filepath);
-                    var thumbJpegStream = file.FileName.Replace(fileExtension, ".jpg");
-                      ffMpeg.GetVideoThumbnail(clip.Filepath, thumbJpegStream, 5);
-                    clip.Thumbnail = thumbJpegStream;
-                    clip.Filesize =  ((int)file.Length);
-                    clip.ChannelId.ChannelId = 1;
-
+                    /*  var ffMpeg = new NReco.VideoConverter.FFMpegConverter();
+                      var fileExtension = Path.GetExtension(clip.Filepath);
+                      var thumbJpegStream = file.FileName.Replace(fileExtension, ".jpg");
+                        ffMpeg.GetVideoThumbnail(clip.Filepath, thumbJpegStream, 5);*/
+                    clip.Thumbnail = "thumbJpegStream.png";
+                    clip.Filesize = ((int)file.Length);
+                      clip.ChannelId = 1;
                     _context.Clip.Add(clip);
                     await _context.SaveChangesAsync();
-                    return CreatedAtAction("GetClip", new { id = clip.ClipId }, clip);
-                    // return Ok(result);
-                } else
-                { 
-                     return BadRequest("This is not a video");
+                    return CreatedAtAction("GetClip", new { id = clip.ClipId }, clip);  // return Ok(result);
+                }
+                else
+                {
+                    return BadRequest("This is not a video");
                 }
             }
             catch (Exception ex)

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AgilePJAPINhomC.Models
 {
@@ -19,8 +20,11 @@ namespace AgilePJAPINhomC.Models
 
         public string? Filepath { get; set; }
         public int ClipStatus { get; set; }
-
-        public virtual Channel ChannelId { get; set; }
+        [ForeignKey("ChannelId")]
+        [Required]        
+        public int ChannelId { get; set; }
+        [Required]
+        public virtual Channel Channel { get; set; }
         
     }
 }

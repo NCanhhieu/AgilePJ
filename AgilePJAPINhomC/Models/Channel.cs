@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AgilePJAPINhomC.Models
 {
@@ -11,9 +12,10 @@ namespace AgilePJAPINhomC.Models
 
         public int? Channelstatus { get; set; }
 
-        public virtual Customer CustomId { get; set; }
-
-
-
+        [ForeignKey("customid")]
+        [Required]
+        //public int customid { get; set; }
+        public virtual Customer customer { get; set; }
+        
     }
 }

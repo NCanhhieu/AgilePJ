@@ -29,7 +29,7 @@ CREATE TABLE customer (
 );
 
 CREATE TABLE Channel (
-  ChannelId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+  ChannelId1 INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
   ChannelName NVARCHAR(100) NOT NULL,
   Channelstatus INT NOT NULL,
   CustomId INT NOT NULL,
@@ -46,14 +46,14 @@ CREATE TABLE Category (
 CREATE TABLE Clip (
   ClipId INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
   ClipName NVARCHAR(100) NOT NULL,
-  ClipDecs TEXT NOT NULL,
-  Thumbail NVARCHAR(100) NOT NULL,
+  ClipDesc TEXT NOT NULL,
+  Thumbnail NVARCHAR(100) NOT NULL,
   DateUpload DATETIME NOT NULL,
   Filesize INT NOT NULL,
   Filepath VARCHAR(100) NOT NULL,
   ClipStatus INT NOT NULL,
-  ChannelId INT DEFAULT(0) NOT NULL,
-  FOREIGN KEY (ChannelId) REFERENCES Channel(ChannelId)
+  ChannelId1 INT DEFAULT(0) NOT NULL,
+  FOREIGN KEY (ChannelId1) REFERENCES Channel(ChannelId1)
 );
 
 
@@ -84,3 +84,14 @@ INSERT INTO Channel (
   Channelstatus  ,
   CustomId 
 ) VALUES ('Zero',1,1);
+INSERT INTO Clip (
+   
+  ClipName  ,
+  ClipDesc  ,
+  Thumbnail  ,
+  DateUpload  ,
+  Filesize  ,
+  Filepath  ,
+  ClipStatus  ,
+  ChannelId   
+) Values ('test','test','test.png','2000/01/02',1,'d:/',0,1);
