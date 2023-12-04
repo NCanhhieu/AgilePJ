@@ -104,12 +104,12 @@
                         var categoryLink = document.createElement('a');
                         categoryLink.classList.add('dropdown-item');
                         categoryLink.href = `${categoryPageUrl}?categoryId=${category.categoryId}`;  // Add your category link here
-                        categoryLink.textContent = category.CategoryName; // Assuming 'name' is the property holding category name
+                        categoryLink.textContent = category.categoryName; // Assuming 'name' is the property holding category name
 
                         // Add an event listener if you want to handle category selection
                         categoryLink.addEventListener('click', function () {
                             // Handle category selection here
-                            console.log('Selected category:', category.title);
+                            console.log('Selected category:', category.CategoryName);
                         });
 
                         // Add hover effect
