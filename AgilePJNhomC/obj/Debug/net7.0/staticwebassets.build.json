@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uQpctGb5X42oZu3KHPnKf1kDy0g3tKJ1e2GViTwKU/E=",
+  "Hash": "DUxBMngIxqGeuVjrHjMCOEyvcnwMWda5F1gioJhzVuY=",
   "Source": "AgilePJNhomC",
   "BasePath": "_content/AgilePJNhomC",
   "Mode": "Default",
@@ -1630,6 +1630,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\testimonial-4.jpg"
+    },
+    {
+      "Identity": "D:\\FPT phan mem\\T2207E\\Agile\\nhanhbase2\\AgilePJ\\AgilePJNhomC\\wwwroot\\img\\thumbJpegStream.png",
+      "SourceId": "AgilePJNhomC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FPT phan mem\\T2207E\\Agile\\nhanhbase2\\AgilePJ\\AgilePJNhomC\\wwwroot\\",
+      "BasePath": "_content/AgilePJNhomC",
+      "RelativePath": "img/thumbJpegStream.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\thumbJpegStream.png"
     },
     {
       "Identity": "D:\\FPT phan mem\\T2207E\\Agile\\nhanhbase2\\AgilePJ\\AgilePJNhomC\\wwwroot\\img\\vendor-1.png",

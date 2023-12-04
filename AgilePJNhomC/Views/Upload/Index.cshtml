@@ -39,19 +39,11 @@
                     <div class="contact-form bg-light mb-4" style="padding: 30px;">
                         <form id="uploadForm">
                             <div class="row">
-                                <div class="form-group">
-                                    <input type="text" class="form-control p-4" placeholder="Video Name" required="required">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control p-4" placeholder="Thumbnail Image" required="required">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control py-3 px-4" rows="5" placeholder="Description" required="required"></textarea>
-                            </div>
-                            <div>
+                                <input class="form-control p-4"  type="file" id="myfile" />
+                                <input class="btn btn-primary py-3 px-5"  type="button" onclick="uploadFile();" value="Upload" />
+                          @* <div>
                                 <button class="btn btn-primary py-3 px-5" type="button" onclick="uploadVideo()">Upload</button>
-                            </div>
+                                </div>*@
                         </form>
                     </div>
                 </div>
@@ -95,21 +87,26 @@
     <script src="js/main.js"></script>
 
     <script>
-        function uploadVideo() {
+        function uploadFile() {
             // Lấy dữ liệu từ các trường input
-            var videoName = $('#videoName').val();
-            var videoDescription = $('#videoDescription').val();
-            var videoFile = $('#videoFile')[0].files[0];
+           // var videoName = $('#videoName').val();
+           // var videoDescription = $('#videoDescription').val();
+           // var videoFile = $('#videoFile')[0].files[0];
 
             // Tạo FormData object để chứa dữ liệu form
-            var formData = new FormData();
-            formData.append('videoFile', videoFile);
-            formData.append('videoName', videoName);
-            formData.append('videoDescription', videoDescription);
+           // var formData = new FormData();
+           // formData.append('videoFile', videoFile);
+          //  formData.append('videoName', videoName);
+           // formData.append('videoDescription', videoDescription);
 
             // Gửi AJAX request
-            $.ajax({
-                url: 'link api upload video',
+            var xhr = new XMLHttpRequest();
+            var file = document.getElementById('myfile').files[0];
+            xhr.open("POST", "http://localhost:5069/api/TestUpDown");
+            xhr.setRequestHeader("filename", file.name);
+            xhr.send(file);
+           /* $.ajax({
+                url: 'http://localhost:5069/api/TestUpDown',
                 type: 'POST',
                 data: formData,
                 contentType: false,//để trình duyệt tự xác định Content-Type
@@ -120,7 +117,7 @@
                 error: function (error) {
                     console.error(error);
                 }
-            });
+            });*/
         }
     </script>
 </body>

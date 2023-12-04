@@ -103,7 +103,7 @@
                     categories.forEach(category => {
                         var categoryLink = document.createElement('a');
                         categoryLink.classList.add('dropdown-item');
-                        categoryLink.href = `${categoryPageUrl}?categoryId=${category.categoryId}`;  // Add your category link here
+                        categoryLink.href = `${categoryPageUrl}/index/?categoryId=${category.categoryId}`;  // Add your category link here
                         categoryLink.textContent = category.categoryName; // Assuming 'name' is the property holding category name
 
                         // Add an event listener if you want to handle category selection

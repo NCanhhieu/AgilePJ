@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Video Detail Page";
-    var videoId = Context.Request.Query["id"];
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var videoId = Context.Request.Query["clipId"];
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +55,7 @@
                             <!-- Placeholder cho mô tả video -->
                         </div>
                         <div class="form-group mb-0">
-                            <button class="btn btn-primary btn-block" type="submit" style="height: 50px;">Download</button>
+                            <button class="btn btn-primary btn-block" type="button" style="height: 50px;">Download</button>
                         </div>
                     </div>
                 </div>
@@ -79,7 +80,7 @@
         $(document).ready(function () {
             // Gửi yêu cầu AJAX để lấy thông tin chi tiết của video
             $.ajax({
-                url: 'Api get video detail ở đây',
+                url: 'http://localhost:5069/api/Clips/'@videoId,
                 type: 'GET',
                 data: { id: @videoId },
                 dataType: 'json',
@@ -99,11 +100,11 @@
 
             // Hiển thị thông tin chi tiết video trong phần Carousel
             var carouselItem = `
-                        <img class="w-100" src="${videoDetails.ThumbnailUrl}" alt="Image">
+                                        <img class="w-100" src="${videoDetails.thumbnail}" alt="Image">
                         <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div class="p-3" style="max-width: 900px;">
-                                <h3 class="display-1 text-white text-uppercase mb-md-3">${videoDetails.Title}</h3>
-                                <a href="${videoDetails.VideoUrl}" class="btn btn-primary py-md-3 px-md-5 mt-2">Play video</a>
+                                        <h3 class="display-1 text-white text-uppercase mb-md-3">${videoDetails.clipId}</h3>
+                                        <a href="${videoDetails.filepath}" class="btn btn-primary py-md-3 px-md-5 mt-2">Play video</a>
                             </div>
                         </div>`;
 
@@ -111,9 +112,36 @@
 
             // Hiển thị mô tả video
             var descriptionContainer = $('.form-group[style="max-height: 200px; overflow-y: auto;"]');
-            var description = `<p class="p-3 text-white mb-md-4">${videoDetails.Description}</p>`;
+            var description = `<p class="p-3 text-white mb-md-4">${videoDetails.clipDesc}</p>`;
             descriptionContainer.html(description);
         }
+
+        $("button").click(function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "http://localhost:5069/api/TestUpDown?fileName=opening_movie.mp4", true);
+            xhr.responseType = "blob";
+            xhr.onload = function (e) {
+                if (this.status == 200) {
+                    var blob = this.response;
+
+                    /* Get filename from Content-Disposition header */
+                    var filename = "";
+                    var disposition = xhr.getResponseHeader('Content-Disposition');
+                    if (disposition && disposition.indexOf('attachment') !== -1) {
+                        var filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+                        var matches = filenameRegex.exec(disposition);
+                        if (matches != null && matches[1]) filename = matches[1].replace(/['"]/g, '');
+                    }
+
+                    // This does the trick
+                    var a = document.createElement('a');
+                    a.href = window.URL.createObjectURL(blob);
+                    a.download = filename;
+                    a.dispatchEvent(new MouseEvent('click'));
+                }
+            }
+            xhr.send();
+        });
     </script>
 </body>
 

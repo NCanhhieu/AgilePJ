@@ -1,5 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Category Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+ 
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -54,13 +56,13 @@
         $(document).ready(function () {
             // Gọi API của thành viên 2 để lấy danh sách video
             $.ajax({
-                url: '/lib/MockData/video.json', // Đường dẫn đến API của thành viên 2 để lấy danh sách video
+                url: 'http://localhost:5069/api/CategoryClips/', // Đường dẫn đến API của thành viên 2 để lấy danh sách video
                 type: 'GET',
                 dataType: 'json',
                 success: function (videos) {
                     // Lọc danh sách video theo categoryId nếu categoryId tồn tại
                     if (categoryId) {
-                        videos = videos.filter(video => video.categoryId == categoryId);
+                        videos = videos.filter(video => video.categoryId.categoryId == categoryId);
                     }
                     // Xử lý dữ liệu trả về từ API và hiển thị danh sách video
                     displayVideoList(videos);
@@ -81,26 +83,26 @@
             // Thêm mỗi video vào danh sách
             videos.forEach(function (video) {
                 var videoItem = `
-                            <div class="col-lg-4 col-md-6 mb-2 video-item" data-video-id="${video.id}">
+                                    <div class="col-lg-4 col-md-6 mb-2 video-item" data-video-id="${video.clipId}">
                                 <!-- Thêm thuộc tính data-video-id để lưu ID của video -->
                                 <div class="rent-item mb-4">
-                                    <img class="img-fluid mb-4" src="${video.thumbnailUrl}" alt="${video.title}">
+                                                    <img class="img-fluid mb-4" src="../wwwroot/img/${video.thumbnail}" alt="${video.clipName}">
                                     <h4 class="text-uppercase mb-4">${video.title}</h4>
                                     <div class="d-flex justify-content-center mb-4">
                                         <div class="px-2">
                                             <i class="fa fa-car text-primary mr-1"></i>
-                                            <span>${video.author}</span>
+                                                    <span>${video.clipDesc}</span>
                                         </div>
                                         <div class="px-2 border-left border-right">
                                             <i class="fa fa-cogs text-primary mr-1"></i>
-                                            <span>${video.duration}</span>
+                                                    <span>${video.filesize}</span>
                                         </div>
                                         <div class="px-2">
                                             <i class="fa fa-road text-primary mr-1"></i>
-                                            <span>${video.uploadTime}</span>
+                                                    <span>${video.dateUpload}</span>
                                         </div>
                                     </div>
-                                    <a class="btn btn-primary px-3" href="${video.videoUrl}">Watch</a>
+                                            <a class="btn btn-primary px-3" href="${video.filepath}">Watch</a>
                                 </div>
                             </div>`;
 
