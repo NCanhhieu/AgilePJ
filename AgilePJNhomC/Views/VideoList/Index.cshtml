@@ -141,7 +141,7 @@
             // Thêm sự kiện click cho các div chứa video
             $('.video-item').click(function () {
                 var videoId = $(this).data('video-id');
-                window.location.href = `/Video/index/clipId=${videoId}`;
+                window.location.href = `/Video?clipId=${videoId}`;
             });
         }
     </script>

@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Category Page";
-    Layout = "~/Views/Shared/_Layout.cshtml";
- 
+   // Layout = "~/Views/Shared/_Layout.cshtml";
+    //var videoId = Context.Request.Query["categoryId"];
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -34,6 +34,9 @@
     </head>
 
     <body>
+    <h1>
+        Category
+    </h1>
     <div id="videoListContainer" class="row">
     </div>
 
@@ -56,16 +59,17 @@
         $(document).ready(function () {
             // Gọi API của thành viên 2 để lấy danh sách video
             $.ajax({
-                url: 'http://localhost:5069/api/CategoryClips/', // Đường dẫn đến API của thành viên 2 để lấy danh sách video
+                url: 'http://localhost:5069/api/Clips', // Đường dẫn đến API của thành viên 2 để lấy danh sách video
                 type: 'GET',
                 dataType: 'json',
                 success: function (videos) {
                     // Lọc danh sách video theo categoryId nếu categoryId tồn tại
-                    if (categoryId) {
-                        videos = videos.filter(video => video.categoryId.categoryId == categoryId);
-                    }
+                    
                     // Xử lý dữ liệu trả về từ API và hiển thị danh sách video
                     displayVideoList(videos);
+                    if (categoryId) {
+                        videos = videos.filter(video => video.categoryId == categoryId);
+                    }
                 },
                 error: function (error) {
                     console.error(error);
@@ -114,7 +118,7 @@
                 var videoId = $(this).data('video-id');
 
                 // Chuyển hướng đến trang chi tiết video với ID tương ứng
-                window.location.href = '/Video/Detail?id=' + videoId;
+                window.location.href = '/Video?clipId=${videoId}';
             });
         }
     </script>
