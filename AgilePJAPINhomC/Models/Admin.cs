@@ -11,6 +11,7 @@ namespace AgilePJAPINhomC.Models
 
         public string? admintel { get; set; }
 
-        public virtual Userweb userid { get; set; }
+        public int userid { get; set; }
+        public virtual Userweb Userweb { get; set; }
     }
 }

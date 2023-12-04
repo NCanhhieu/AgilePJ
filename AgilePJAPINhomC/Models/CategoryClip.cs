@@ -7,9 +7,11 @@ namespace AgilePJAPINhomC.Models
         [Key]
         public int CaclipId { get; set; }
 
-        public virtual Category CategoryId { get; set; }
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
 
-        public virtual Clip ClipId { get; set; }
+        public int ClipId { get; set; }
+        public virtual Clip Clip { get; set; }
 
     }
 }

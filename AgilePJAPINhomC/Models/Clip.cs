@@ -20,7 +20,8 @@ namespace AgilePJAPINhomC.Models
         public string? Filepath { get; set; }
         public int ClipStatus { get; set; }
 
-        public virtual Channel ChannelId { get; set; }
+        public int ChanelId { get; set; }
+        public virtual Channel Channel { get; set; }
         
     }
 }

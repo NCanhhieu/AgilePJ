@@ -11,7 +11,8 @@ namespace AgilePJAPINhomC.Models
 
         public int? Channelstatus { get; set; }
 
-        public virtual Customer CustomId { get; set; }
+        public int customId { get; set; }
+        public virtual Customer customer { get; set; }
 
 
 

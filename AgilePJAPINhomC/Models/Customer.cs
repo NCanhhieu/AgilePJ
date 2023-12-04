@@ -15,6 +15,7 @@ namespace AgilePJAPINhomC.Models
 
         public DateTime custbirthday { get; set; }
 
-        public virtual Userweb userid { get; set;}
+        public int userid { get; set; }
+        public virtual Userweb Userweb { get; set;}
     }
 }
